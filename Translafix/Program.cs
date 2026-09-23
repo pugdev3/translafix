@@ -1,4 +1,5 @@
 ﻿using UndertaleModLib;
+using System;
 using static UndertaleModLib.UndertaleReader;
 
 namespace Translafix;
@@ -73,14 +74,14 @@ public class Program
     /// <returns>Result code of the program.</returns>
     public static int Main(string[] args)
     {
-        Console.WriteLine("translafix (c) 2026 pugdev, eliandro4 and UTMT contributors");
-
         if (OperatingSystem.IsWindows() && args.Length == 0 && Console.GetCursorPosition() == (0, 0))
         {
             Console.WriteLine("Translafix is a CLI-only program and needs to be run in the Command Line or Powershell\n\n(Press any key to dismiss this message.)");
             Console.ReadKey();
             return 1;
         }
+
+        Console.WriteLine("translafix (c) 2026 pugdev, eliandro4 and UTMT contributors");
 
         if (args.Length < 3)
         {
